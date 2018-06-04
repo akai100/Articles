@@ -1,0 +1,96 @@
+@CHARSET "UTF-8";
+	    .banner {
+	        height: 380px;
+	        margin-top: 20px;
+	        position: relative;
+	        overflow: hidden;
+	    }
+	    .banner .content {
+	        width: 1060px;
+	        height: 350px;
+	        margin: 20px auto;
+	        position: relative;
+	    }
+	    .banner .content ul li img {
+	        width: 1366px;
+	        height: 768px;
+	    }
+	    .banner .content ul {
+	        width: 10000px;
+	    }
+	    .btn_left, .btn_right {
+	        display: inline-block;
+	        width: 21px;
+	        height: 150px;
+	        background: url(../imgs/banner_tb.png) no-repeat;
+	        position: absolute;
+	        left: -38px;
+	        top: 90px;
+	    }
+	    .btn_right {
+	        background-position: -29px 0;
+	        position: absolute;
+	        left: 1041px;
+	        top: 90px;
+	    }
+	    .banner .content:hover .btn_left {
+	        opacity: 1;
+	    }
+	    .banner .content:hover .btn_right {
+	        opacity: 1;
+	    }
+.fl {float: left;}
+.fr {float: right;}
+.category {
+	margin-top: 10px;
+	margin-bottom:20px;
+}
+.category .title {
+	margin-top: 10px;
+	border-bottom: 1px solid #cac5c5;
+	height: 30px;
+	text-indent: 30px;
+	font-size: 18px;
+	color: #666;
+}
+.category .items {
+	margin-left: 10px;
+}
+.category .items .item {
+	width: 230px;
+	height: 320px;
+	background: #ccc;
+	margin: 20px;
+	float: left;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.category .items .item div {
+	text-align: center;
+}
+.item-banner {
+	background: #666;
+	color: #FFF;
+}
+.item-header {
+	font-size: 12px;
+	line-height: 52px;
+}
+.item-name {
+	font-size: 22px;
+	line-height: 74px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.item-author {
+	font-size: 14px;
+	text-indent: 7em;
+	padding-bottom: 70px;
+}
+.item-description {
+	background: #eee;
+	height: 104px;
+	line-height: 76px;
+	font-size: 12px;
+}

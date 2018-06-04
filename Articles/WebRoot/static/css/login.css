@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+* {
+	font-style: normal;
+	font-family: 微软雅黑;
+	list-style: none;
+}
+.login_{
+	width: 1080px;
+	height: 500px;
+	margin: 80px auto 40px auto;
+	font-size: 12px;
+	color: #666;
+}
+.login-img{
+	float: left;
+	width: 690px;
+	height: 430px;
+}
+.login-box {
+	border: none;
+	float: right;
+	width: 350px;
+	border: solid 1px #eee\9
+	background: #fff;
+	box-shadow: 0 0 12px #ddd;
+}
+.login-cont {
+	padding: 20px 25px 25px 25px;
+	width: 300px;
+	min-height: 240px;
+}
+.login-cont dt
+{
+	line-height: 30px;
+	font-size: 16px;
+	height: 30px;
+	margin-bottom: -5px;
+}
+.login-cont dt span
+{
+	float: left;
+	width: 150px;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.login-cont dd p{
+	height: 40px;
+	width: 300px;
+	background: #f0f0f0;
+	margin-top: 20px;
+}
+.login-cont dd p i{
+	float: left;
+	width: 46px;
+	height: 22px;
+	margin: 9px 0;
+	border-right: solid 1px #e0e0e0;
+	background: url(../imgs/icon-login.png)
+}
+.login-cont dd p.login-member i
+{
+	background-position: center top;
+}
+.login-cont dd p.login-number i {
+	background-position: center -44px;
+}
+.login-cont dd p input
+{
+	float: left;
+	height: 40px;
+	background: none;
+	line-height: 40px;
+	font-size: 14px;
+	padding: 0 10px;
+	width: 233px;
+}
+.login-cont dd span {
+	display: block;
+	height: 45px;
+	margin-top: 2-px;
+}
+.login-cont dd span button {
+	width: 300px;
+	padding-left: 10px;
+	height: 45px;
+}
