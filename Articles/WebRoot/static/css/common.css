@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+*, ::after, ::before{
+	box-sizing: border-box;
+}
+.d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+.flex-row{
+	-ms-flex-direction: row!important;
+    flex-direction: row!important;
+}
+.col-form-label {
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+}
+label.labTitle {
+    margin-right: 6px;
+    padding: 0;
+    width: 72px;
+    line-height: 32px;
+}
+label.labTitle {
+    padding-bottom: 0;
+    font-size: 14px;
+    color: #4F4F4F;
+    text-align: right;
+}
+.col-form-label {
+    font-size: .875rem;
+}
+label{
+	display: inline-block;
+    margin-bottom: .5rem;
+}
+.form-group .col-form-label {
+    text-align: right;
+}
+div.tag-box {
+    max-width: 880px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+
+.form-group{
+	margin-bottom: 1rem;
+}
+.form-control-sm{
+	padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.form-group{
+	color: #4f4f4f;
+}
+.main-wrapper{
+	margin-left: 0px;
+	margin-right: 0;
+}
+.row{
+	padding: 0;
+	margin-left: 0px;
+	margin-right: 0;
+}
+input, select, textarea{
+	outline: none;
+}
+
+textarea{
+	overflow: auto;
+	resize: vertical;
+}
+button, input, optgroup, select, textare{
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit
+}
+button.btn-add-tag {
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: #349EDF;
+    font-size: 14px;
+    outline: none;
+    line-height: 30px;
+}
+[type=reset], [type=submit], button, html [type=button] {
+    cursor: pointer;
+}
+.mr8 {
+    margin-right: 8px;
+}
+div.tag-box button.btn-add-tag {
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: #349EDF;
+    font-size: 14px;
+    line-height: 32px;
+    outline: none;
+}
+div.tag-box button.btn-add-tag i.icon-tianjia {
+    font-size: 16px;
+    color: #349EDF;
+    vertical-align: -1px;
+}
+div.tag-box button.btn-add-tag i.icon-tianjia.mr8 {
+    margin-right: 8px;
+}

@@ -25,7 +25,7 @@ if (user == null)
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<link rel="stylesheet" type="text/css" href="${basePath }/static/css/postedit.css">
-	<link rel="stylesheet" type="text/css" href="${basePath }/static/css/commons181349e.css">
+	<link rel="stylesheet" type="text/css" href="${basePath }/static/css/common.css">
 
   </head>
   
@@ -50,7 +50,22 @@ if (user == null)
                       <input type="text" id="txtTitle" maxlength="100" placeholder="请输入文章标题">
                   </div>
                   <div class="selection">
-                      <textarea id="editor" name="editor" rows="30" style="width: 99.4%;display:none"></textarea>
+                      <textarea rows="30" id="editor" name="editor"></textarea>
+                  </div>
+                  <!--  -->
+                  <div id="moreDiv">
+                      <div class="pos-box">
+                          <div class="form-group row form-control-sm">
+                              <label class="labTitle" col-form-label">文章标签：</label>
+                              <div class="txt-box">
+                                  <div class="tag-box d-flex flex-row" id="articleTagBox">
+                                      <button class="btn-add-tag" id="addTag">
+                                          <i class="xheIcon icon-tianjia mr8" aria-hidden="true"></i>添加标签                                       
+                                      </button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                   </div>
               </div>
           </div>

@@ -14,14 +14,6 @@ div.container{
 .container{
 	width: 100%;
 }
-.row{
-	padding: 0;
-	margin-left: 0px;
-	margin-right: 0;
-}
-.row{
-	display: flex;
-}
 #sidebar
 {
 	min-height: 560px;
@@ -75,8 +67,8 @@ div.container{
     margin-bottom: 0;
 }
 .list-group-item.active {
-    background-color: #C92027;
-    border-color: #C92027;
+    background: #74b0e2;
+    background: #74b0e2;
 }
 #content-body{
 	padding: 1.5rem;
@@ -97,4 +89,31 @@ div.title-box {
     border: none;
     background-color: #efefef;
     color: #4f4f4f;
+}
+.selection{
+	width: 100%;
+}
+.selection textarea {
+	display: block;
+    width: 100%;
+    height: 500px;
+    line-height: 40px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    border: none;
+    background-color: #efefef;
+    color: #4f4f4f;
+}
+#moreDiv{
+	margin-top: 24px;
+}
+.icon-tianjia:before {
+    content: "\e8df";
+}
+.xheIcon {
+    font-family: "xheIcon" !important;
+    font-size: 14px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
