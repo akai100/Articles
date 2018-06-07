@@ -26,12 +26,52 @@ if (user == null)
 	-->
 	<link rel="stylesheet" type="text/css" href="${basePath }/static/css/postedit.css">
 	<link rel="stylesheet" type="text/css" href="${basePath }/static/css/common.css">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="${basePath }/static/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	
 	<script type="text/javascript" src="${basePath}/static/js/jquery-3.3.1.min.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="${basePath }/static/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
   </head>
   
   <body>
+      <!-- 模态框 -->
+      <div class="modal fade" id="categorieModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4>选择其他分类</h4>
+                  </div>
+                  <!-- body -->
+                  <div class="modal-body">
+                      <div id="treeView">
+                          <ul>
+                              <li>
+                                  <div class="treeNode">
+                                      <i></i>
+                                      <i></i>
+                                      <span>全部文件</span>
+                                  </div>
+                                  <ul>
+                                      <li></li>
+                                      <li>
+                                          <div></div>
+                                      </li>
+                                  </ul>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+                  <!-- footer -->
+                  <div class="modal-footer">
+                  </div>
+              </div>
+          </div>
+      </div>
       <!-- 头部页面 -->
       <%@include file="common/header.jsp" %>
       <!--  -->
@@ -58,7 +98,7 @@ if (user == null)
                   <div id="moreDiv">
                       <div class="pos-box">
                           <div class="form-group row form-control-sm">
-                              <label class="labTitle" col-form-label">文章标签：</label>
+                              <label class="labTitle col-form-label">文章标签：</label>
                               <div class="txt-box">
                                   <div class="tag-box d-flex flex-row" id="articleTagBox">
                                       <button class="btn-add-tag" id="addTag">
@@ -75,7 +115,19 @@ if (user == null)
                               <label class="labTitle col-form-label">个人分类：</label>
                               <div class="txt-box">
                                   <div class="tag-box d-flex flex-row" id="categorieBox">
-                                      <button class="btn-add-tag" id="addCategorie">添加新分类</button>
+                                      <div class="dropdown">
+                                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                          Dropdown
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                              <li><a>Action</a></li>
+                                              <li><a>Another action</a></li>
+                                              <li><a>Something else here</a></li>
+                                              <li role="separator" class="divider"></li>
+                                              <li><a data-toggle="modal" data-target="#categorieModal">选择其他分类...</a></li>
+                                          </ul>
+                                      </div>
                                   </div>
                                   <!--  -->
                                   <div class="categorie-list">
@@ -127,16 +179,22 @@ if (user == null)
           $("#addTag").click(function(){
               
               $("#addTag").before("<div class=\"tag\"><span class=\"name\" contenteditable=\"true\"></span><i class=\"xheIcon icon-guanbi\"></i></div>");
-              $(".xhIcon").click(function() {
-                  alert("click");
-              });
               tagNum += 1;
+              $("div.tag:last i").click(function() {
+                  $("div.tag:last").remove();
+                  if (tagNum == 3)
+                      $("#addTag").removeAttr("disabled");
+                  tagNum -= 1;
+              });
               if (tagNum == 3)
               {
                   $("#addTag").attr("disabled", "");
               }
           });
-          
+          // 添加个人分类按钮
+          $("#addCategorie").click(function() {
+              $("#categorieModal").modal('show');
+          })
       </script>
   </body>
 </html>
