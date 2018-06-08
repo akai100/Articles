@@ -49,21 +49,6 @@ if (user == null)
                   <!-- body -->
                   <div class="modal-body">
                       <div id="treeView">
-                          <ul>
-                              <li>
-                                  <div class="treeNode">
-                                      <i></i>
-                                      <i></i>
-                                      <span>全部文件</span>
-                                  </div>
-                                  <ul>
-                                      <li></li>
-                                      <li>
-                                          <div></div>
-                                      </li>
-                                  </ul>
-                              </li>
-                          </ul>
                       </div>
                   </div>
                   <!-- footer -->
@@ -195,6 +180,69 @@ if (user == null)
           $("#addCategorie").click(function() {
               $("#categorieModal").modal('show');
           })
+          //
+          var data = {files: [
+             {id: 0,pid: -1,title: '全部文件'},{id: 1,pid: 0,title: '我的收藏'},{id: 2,pid: 0,title: '我的音乐'},
+             {id: 3,pid: 0,title: '我的电影'},{id: 4,pid: 0,title: '我的书籍'},{id: 11,pid: 1,title: '工具'},
+             {id: 12,pid: 1,title: '画册'},{id: 13,pid: 1,title: '班级图片'},{id: 41,pid: 4,title: 'JavaScript 高级程序设计'},
+             {id: 42,pid: 4,title: '锋利的jQuery'},{id: 43,pid: 4,title: 'JavaScript语言精粹'}
+         ]};
+         var fileData = data.files;
+         var treeView = $("#treeView")[0];
+         treeView.innerHTML = treeHtml(fileData, -1);
+         function treeHtml(fileData, fileId)
+         {
+             var _html = '';
+             var children = getChildById(fileData, fileId);
+             var hideChild = fileId > 0 ? 'none' : '';
+             
+             _html += '<ul class="' + hideChild + '">';
+             
+             children.forEach(function(item, index){
+                 var level = getLevelById(fileData, item.id);
+                 var distance = (level - 1) * 20 + 'px';
+                 var hasChild = hasChilds(fileData, item.id);
+                 var className = hasChild ? '' : 'treeNode-empty';
+                 var treeRoot_cls = fileId === -1 ? 'treeNode-cur' : '';
+                 
+                 _html += '<li><div class="treeNode' + className + ' ' + treeRoot_cls + '" style="padding-left:' + distance + '}" data-file-id="' + item.id + '"><i class="icon icon-control icon-add"></i><i class="icon icon-file"></i><span class="title">' + item.title + '</span></div>' + treeHtml(fileData, item.id) +'</li>';
+             });
+             _html += '</ul>';
+             return _html;
+             
+         }
+         function getChildById(arr, pid)
+         {
+             var newArr = [];
+             for (var i = 0; i < arr.length; i++)
+             {
+                 if (arr[i].pid == pid)
+                     newArr.push(arr[i]);
+             }
+             return newArr;
+         }
+         function getLevelById(data, id) 
+         {
+             return getParents(data, id).length;
+         }
+         function hasChilds(data, id)
+         {
+             return getChildById(data, id).length !== 0;
+         }
+         function getParents(data, currentId)
+         {
+             var arr = [];
+             for (var i = 0; i < data.length; i++)
+             {
+                 if (data[i].id == currentId)
+                 {
+                     arr.push(data[i]);
+                     arr = arr.concat(getParents(data, data[i].pid))
+                     break;
+                 }
+             }
+             return arr;
+         }
       </script>
   </body>
 </html>
